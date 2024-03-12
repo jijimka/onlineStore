@@ -1,0 +1,12 @@
+.myInput {
+    padding: 10px 5px;
+    border: 2px solid #e8e8e8;
+    color: #777;
+    font-size: 18px;
+    width: 380px;
+    font-weight: 200;
+    border-radius: 5px;
+}
+.myInput::placeholder {
+    text-transform: capitalize;
+}

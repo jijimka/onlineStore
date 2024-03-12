@@ -1,0 +1,32 @@
+.modalWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.37);
+    cursor: default;
+    z-index: 9999;
+    padding: 150px 135px;
+    overflow: hidden;
+}
+.modalWindow.active {
+    display: flex;
+}
+.modalWindow__content {
+    position: relative;
+    top: 0;
+    padding: 50px;
+    background-color: #060c13;
+    color: #DDDCDD;
+    border-radius: 10px;
+    flex: 1 1;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
