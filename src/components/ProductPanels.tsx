@@ -4,9 +4,8 @@ import PanelItemMini from "./PanelItemMini";
 import {IProduct} from "../types/IProduct";
 interface ProductPanelsProps {
     product:IProduct[],
-    img:string,
 }
-const ProductPanels:FC<ProductPanelsProps> = ({product,img}) => {
+const ProductPanels:FC<ProductPanelsProps> = ({product}) => {
     return (
         <div className='product-panel'>
             <div className="product-panel__container">

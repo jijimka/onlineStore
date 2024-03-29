@@ -6,8 +6,6 @@ import HeaderComponent from "./components/HeaderComponent";
 import {IProduct} from "./types/IProduct";
 import MenuComponent from "./components/MenuComponent";
 import NavBarComponent from "./components/NavBarComponent";
-// @ts-ignore
-import img from './images/20.png'
 import ProductPanels from "./components/ProductPanels";
 import ListProductsComponent from "./components/ListProductsComponent";
 import {getRandomProduct, getRandomProductInCategories} from "./utils/getRandomProduct";
@@ -42,9 +40,9 @@ function App() {
             <HeaderComponent/>
             <MenuComponent/>
             <NavBarComponent categories={categories}/>
-            <ProductPanels product={product} img={img}/>
+            <ProductPanels product={product}/>
             <ListProductsComponent product={productList}/>
-            {topDeal && topSale && topDress ? <TopDealComponent topDeal={topDeal} topSale={topSale} topDress={topDress} img={img}/> : null}
+            {topDeal && topSale && topDress ? <TopDealComponent topDeal={topDeal} topSale={topSale} topDress={topDress}/>: null}
             <InfoComponent/>
             <FooterComponent/>
         </div>

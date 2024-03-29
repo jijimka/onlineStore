@@ -5,10 +5,9 @@ interface TopDealComponentProps {
     topDeal:IProduct,
     topSale:IProduct,
     topDress:IProduct,
-    img:string,
 }
 
-const TopDealComponent:FC<TopDealComponentProps> = ({topSale,topDress,topDeal,img}) => {
+const TopDealComponent:FC<TopDealComponentProps> = ({topSale,topDress,topDeal}) => {
     return (
         <div className="top-deal">
             <div className="top-deal__container">

@@ -6,8 +6,6 @@ import {fetchCategories, fetchProduct} from "../API/fetchProduct";
 import {useTypedDispatch, useTypedSelector} from "../hooks/redux";
 import MainTittle from "../components/MainTittle";
 import ProductCard from "../components/ProductCard";
-// @ts-ignore
-import img from '../images/20.png'
 import {FormControl, FormControlLabel, Radio, RadioGroup, Slider} from "@mui/material";
 import {getHighestPrice} from "../utils/getHighestPrice";
 import MyInput from "../UI/Input/MyInput";

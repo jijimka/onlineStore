@@ -1,12 +1,11 @@
 import React, {FC} from 'react';
-// @ts-ignore
-import img from "../images/20.png";
 import {Rating} from "@mui/material";
 import {IProduct} from "../types/IProduct";
 import {useTypedDispatch, useTypedSelector} from "../hooks/redux";
 import {shopCartSlice} from "../store/reducers/shopCartSlice";
 import {wishlistSlice} from "../store/reducers/wishlistSlice";
 import {usersSlice} from "../store/reducers/usersSlice";
+import {AllImages} from "../images/AllImages";
 interface ProductInfoProps {
     product:IProduct,
 
@@ -32,7 +31,7 @@ const ProductInfo:FC<ProductInfoProps> = ({product}) => {
     return (
         <div className='product__info'>
             <div className="product__img-div">
-                {<img className='product__img' src={img} alt={product.category}/>}
+                {<img className='product__img' src={AllImages(product.id)} alt={product.category}/>}
             </div>
             <div className="product__body">
                 <div className="product__text">
