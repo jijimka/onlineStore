@@ -38,7 +38,7 @@ const ProductPage = () => {
             <HeaderComponent/>
             <MenuComponent/>
             <NavBarComponent categories={categories}/>
-            <MainTittle><Link rel='noreferrer noopener' to='/shop'>Shop</Link> / <span className='blue'>{productCategory}</span></MainTittle>
+            <MainTittle><Link rel='noreferrer noopener' to='/onlineStore/shop'>Shop</Link> / <span className='blue'>{productCategory}</span></MainTittle>
             {product !== undefined
                 ?
                 <div className="product">

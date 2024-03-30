@@ -7,7 +7,7 @@ const InfoComponent = () => {
     const navigate = useNavigate()
 
     function myAccountRedirectFunc() {
-        return loggedIn === null ? navigate('/login') : navigate(`/profile/${loggedIn.id}`)
+        return loggedIn === null ? navigate('/onlineStore/login') : navigate(`/onlineStore/profile/${loggedIn.id}`)
     }
     return (
         <div className="info">

@@ -2,14 +2,13 @@ import React, {FC} from 'react';
 import {IProduct} from "../types/IProduct";
 import {useTypedDispatch, useTypedSelector} from "../hooks/redux";
 import {shopCartSlice} from "../store/reducers/shopCartSlice";
+import {AllImages} from "../images/AllImages";
 
 interface ShopCartProductProps {
     product: IProduct,
-    img: string,
-
 }
 
-const ShopCartProduct: FC<ShopCartProductProps> = ({product, img,}) => {
+const ShopCartProduct: FC<ShopCartProductProps> = ({product,}) => {
     const dispatch = useTypedDispatch()
     const allShopCartProducts = useTypedSelector(state => state.shopCart.shopCart)
     const {removeProduct} = shopCartSlice.actions
@@ -28,7 +27,7 @@ const ShopCartProduct: FC<ShopCartProductProps> = ({product, img,}) => {
                 </div>
             </div>
             <div className="shopCartProduct__img-div">
-                <img className='shopCartProduct__img' alt={product.category} src={img}/>
+                <img className='shopCartProduct__img' alt={product.category} src={AllImages(product.id)}/>
             </div>
         </div>
     );

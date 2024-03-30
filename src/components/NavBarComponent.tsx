@@ -27,12 +27,12 @@ const NavBarComponent: FC<NavBarComponentProps> = ({categories}) => {
                     </div>
                     <ModalWindow isActive={isCategoriesActive} changeActive={changeCategoriesModal}>
                         <div className="categories__list">
-                            {categories.map(i => <Link to={`/shop`} state={{category:i}} className='list__paragraph'>{i}</Link>)}
+                            {categories.map(i => <Link to={`/onlineStore/shop`} state={{category:i}} className='list__paragraph'>{i}</Link>)}
                         </div>
                     </ModalWindow>
                 </div>
                 <div className="nav__pages">
-                    <Link rel='noreferrer noopener' to='/' className="pages__page">
+                    <Link rel='noreferrer noopener' to='/onlineStore/' className="pages__page">
                         Home
                     </Link>
                     <div className="pages__page">
@@ -41,7 +41,7 @@ const NavBarComponent: FC<NavBarComponentProps> = ({categories}) => {
                     <div className="pages__page">
                         Products
                     </div>
-                    <Link rel='noreferrer noopener' to='/shop' className="pages__page">
+                    <Link rel='noreferrer noopener' to='/onlineStore/shop' className="pages__page">
                         Shop
                     </Link>
                     <div className="pages__page">

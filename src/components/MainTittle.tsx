@@ -11,7 +11,7 @@ const MainTittle: FC<MainTittleProps> = ({children}) => {
                 Shop
             </h1>
             <div className='main-title__subtitle'>
-                <Link rel='noreferrer noopener' to='/'>Home</Link> / {children}
+                <Link rel='noreferrer noopener' to='/onlineStore/'>Home</Link> / {children}
             </div>
         </div>
     );

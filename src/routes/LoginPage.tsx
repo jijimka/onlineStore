@@ -28,7 +28,7 @@ const LoginPage = () => {
             setOutputLoginSubmit(true)
             dispatch(loggedInUser(loginResult))
             setTimeout(() => {
-                navigate('/')
+                navigate('/onlineStore/')
             }, 1000)
         }
 

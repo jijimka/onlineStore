@@ -19,10 +19,10 @@ const ProfilePage = () => {
     }, [])
     function logoutFunc() {
         dispatch(userLogout())
-        navigator('/')
+        navigator('/onlineStore/')
     }
     if (loggedInUser === null) {
-        navigator('/login')
+        navigator('/onlineStore/login')
     }
     return (
         <div className='profile'>

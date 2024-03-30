@@ -11,23 +11,23 @@ import ProfilePage from "./routes/ProfilePage";
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: '/onlineStore/',
         element: <App/>,
     },
     {
-        path: '/shop',
+        path: '/onlineStore/shop',
         element: <Shop/>,
     },
     {
-        path: '/shop/:productCategory/:productId',
+        path: '/onlineStore/shop/:productCategory/:productId',
         element: <ProductPage/>,
     },
     {
-        path: '/login',
+        path: '/onlineStore/login',
         element: <LoginPage/>
     },
     {
-        path: '/profile/:id',
+        path: '/onlineStore/profile/:id',
         element: <ProfilePage/>
     }
 ])

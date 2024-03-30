@@ -1,5 +1,5 @@
 import React from 'react';
-import {useRouteError} from "react-router-dom";
+import {Link, useRouteError} from "react-router-dom";
 
 const ErrorPage = () => {
     const error = useRouteError()
@@ -16,6 +16,7 @@ const ErrorPage = () => {
             {   // @ts-ignore
                 error.statusText
             }
+            <Link rel='noreferrer noopener' to='/onlineStore/'>Homepage</Link>
         </div>
     );
 };

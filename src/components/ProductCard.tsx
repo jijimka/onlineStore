@@ -3,7 +3,7 @@ import {IProduct} from "../types/IProduct";
 import {Rating} from "@mui/material";
 import {useTypedDispatch, useTypedSelector} from "../hooks/redux";
 import {shopCartSlice} from "../store/reducers/shopCartSlice";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {wishlistSlice} from "../store/reducers/wishlistSlice";
 import {AllImages} from "../images/AllImages";
 
@@ -15,6 +15,7 @@ interface ProductCardProps {
 }
 
 const ProductCard: FC<ProductCardProps> = ({product, sale,style,imgBackgroundColor}) => {
+    const navigate = useNavigate()
     const {addProduct} = shopCartSlice.actions
     const {addToWishlist} = wishlistSlice.actions
     const loggedIn = useTypedSelector(state => state.users.loggedInUser)
@@ -26,6 +27,8 @@ const ProductCard: FC<ProductCardProps> = ({product, sale,style,imgBackgroundCol
     function addToCart() {
         if (loggedIn !== null) {
             dispatch(addProduct(product))
+        } else {
+            navigate('/onlineStore/login')
         }
     }
     if (isBttnsActive) {
@@ -37,6 +40,8 @@ const ProductCard: FC<ProductCardProps> = ({product, sale,style,imgBackgroundCol
     function addToWishlistFunc() {
         if (loggedIn !== null) {
             dispatch(addToWishlist(product))
+        } else {
+            navigate('/onlineStore/login')
         }
     }
 
@@ -57,7 +62,7 @@ const ProductCard: FC<ProductCardProps> = ({product, sale,style,imgBackgroundCol
             <div className={bttnsClasses.join(' ')}>
                 <div onClick={addToWishlistFunc} className="btn bttns__like">like</div>
                 <div onClick={addToCart} className="btn bttns__cart">add to cart</div>
-                <Link rel='noreferrer noopener' style={{color:'white'}} to={`/shop/${product.category}/${product.id}`} className="btn bttns__more">more</Link>
+                <Link rel='noreferrer noopener' style={{color:'white'}} to={`/onlineStore/shop/${product.category}/${product.id}`} className="btn bttns__more">more</Link>
             </div>
         </div>
     );
