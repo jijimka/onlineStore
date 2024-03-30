@@ -23,9 +23,9 @@ const HeaderComponent = () => {
                             {
                                 loggedInUser === null
                                 ?
-                                <Link to='/login'>Login</Link>
+                                <Link rel='noreferrer noopener' to='/login'>Login</Link>
                                 :
-                                <Link to={`/profile/${loggedInUser.id}`}>{loggedInUser.email}</Link>
+                                <Link rel='noreferrer noopener' to={`/profile/${loggedInUser.id}`}>{loggedInUser.email}</Link>
                             }
                         </div>
                     </div>

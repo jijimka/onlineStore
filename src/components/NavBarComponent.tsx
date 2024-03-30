@@ -32,7 +32,7 @@ const NavBarComponent: FC<NavBarComponentProps> = ({categories}) => {
                     </ModalWindow>
                 </div>
                 <div className="nav__pages">
-                    <Link to='/' className="pages__page">
+                    <Link rel='noreferrer noopener' to='/' className="pages__page">
                         Home
                     </Link>
                     <div className="pages__page">
@@ -41,7 +41,7 @@ const NavBarComponent: FC<NavBarComponentProps> = ({categories}) => {
                     <div className="pages__page">
                         Products
                     </div>
-                    <Link to='/shop' className="pages__page">
+                    <Link rel='noreferrer noopener' to='/shop' className="pages__page">
                         Shop
                     </Link>
                     <div className="pages__page">

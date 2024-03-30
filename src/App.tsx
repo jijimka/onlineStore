@@ -42,7 +42,8 @@ function App() {
             <NavBarComponent categories={categories}/>
             <ProductPanels product={product}/>
             <ListProductsComponent product={productList}/>
-            {topDeal && topSale && topDress ? <TopDealComponent topDeal={topDeal} topSale={topSale} topDress={topDress}/>: null}
+            {topDeal && topSale && topDress ?
+                <TopDealComponent topDeal={topDeal} topSale={topSale} topDress={topDress}/> : null}
             <InfoComponent/>
             <FooterComponent/>
         </div>

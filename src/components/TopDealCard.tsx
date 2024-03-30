@@ -19,7 +19,7 @@ const TopDealCard:FC<TopDealCardProps> = ({product,subtitle}) => {
                 <div className="card__title">
                     {product?.title}
                 </div>
-                <Link to={`/shop/${product?.category}/${product?.id}`} style={{color:'#076df2'}} className="card__btn"><span className='floor'>Shop</span> now</Link>
+                <Link rel='noreferrer noopener' to={`/shop/${product?.category}/${product?.id}`} style={{color:'#076df2'}} className="card__btn"><span className='floor'>Shop</span> now</Link>
             </div>
             <div className="card__img-div">
                 <img src={AllImages(product?.id)} alt="" className="card__img"/>

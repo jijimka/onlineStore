@@ -36,7 +36,7 @@ const MenuComponent = () => {
     return (
         <div className="menu">
             <div className="menu__container">
-                <Link to='/' className="menu__title">
+                <Link rel='noreferrer noopener' to='/' className="menu__title">
                     jijimka
                 </Link>
                 <div className="menu__search">
@@ -44,7 +44,7 @@ const MenuComponent = () => {
                               options={[{value: 'all', name: 'All category'}]}/>
                     <MyInput style={searchStyleProps} value={searchQuery} placeholder='Search'
                              changeEvent={searchChange}/>
-                    <Link state={{category: categorySelected, search: searchQuery}} to='/shop'
+                    <Link rel='noreferrer noopener' state={{category: categorySelected, search: searchQuery}} to='/shop'
                           className='menu__button-search'>
                         <img alt='search' className='button-search__img'
                              src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/1200px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png'/>
@@ -59,7 +59,7 @@ const MenuComponent = () => {
                             <div className="wishlist-list">
                                 {loggedInUser === null
                                     ?
-                                    <h1><Link to='/login'><span className='large blue'>Login</span></Link> to use
+                                    <h1><Link rel='noreferrer noopener' to='/login'><span className='large blue'>Login</span></Link> to use
                                         wishlist</h1>
                                     :
                                     wishlist.length < 1

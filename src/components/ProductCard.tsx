@@ -57,7 +57,7 @@ const ProductCard: FC<ProductCardProps> = ({product, sale,style,imgBackgroundCol
             <div className={bttnsClasses.join(' ')}>
                 <div onClick={addToWishlistFunc} className="btn bttns__like">like</div>
                 <div onClick={addToCart} className="btn bttns__cart">add to cart</div>
-                <Link style={{color:'white'}} to={`/shop/${product.category}/${product.id}`} className="btn bttns__more">more</Link>
+                <Link rel='noreferrer noopener' style={{color:'white'}} to={`/shop/${product.category}/${product.id}`} className="btn bttns__more">more</Link>
             </div>
         </div>
     );
