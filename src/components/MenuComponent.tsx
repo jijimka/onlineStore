@@ -36,7 +36,7 @@ const MenuComponent = () => {
     return (
         <div className="menu">
             <div className="menu__container">
-                <Link rel='noreferrer noopener' to='/' className="menu__title">
+                <Link rel='noreferrer noopener' to='/onlineStore/' className="menu__title">
                     jijimka
                 </Link>
                 <div className="menu__search">
