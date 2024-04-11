@@ -1,0 +1,24 @@
+.dragDiv {
+    font-size: 24px;
+    text-transform: capitalize;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #060c13;
+    position: fixed;
+    padding: 25px 25px;
+    right: 0;
+    bottom: 100px;
+    flex-wrap: wrap;
+    width: 250px;
+    text-align: center;
+    background-color: #fff;
+    transition: 0.2s ease all;
+}
+.active {
+    display: flex;
+}
+.dragDiv__hover {
+    background-color: #060c13;
+    color: white;
+}

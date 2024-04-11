@@ -15,9 +15,13 @@ import MySelect from "../UI/Select/MySelect";
 import {useProductSort} from "../hooks/useFilter";
 import {useLocation} from "react-router-dom";
 import {useControlledInput} from "../hooks/useControlledInput";
+import DragBox from "../UI/DragBox/DragBox";
+import {useSwitcher} from "../hooks/useSwitcher";
+import {shopCartSlice} from "../store/reducers/shopCartSlice";
 
 const Shop = () => {
     const dispatch = useTypedDispatch()
+    const addProductToShopcart = shopCartSlice.actions.addProduct
     const {product, loading, error} = useTypedSelector(state => state.product)
     const categories = useTypedSelector(state => state.categories.categories)
     const {state} = useLocation()
@@ -26,6 +30,7 @@ const Shop = () => {
     const [searchFilter, searchFilterChange] = useControlledInput()
     const [sorting, sortingChange] = useControlledInput()
     const filteredProduct = useProductSort(product, searchFilter, sliderValue, filterValue, sorting)
+    const [dragDivActive,setDragDivActive] = useSwitcher()
     const sortingOptions = [
         {value: 'default', name: 'Default'},
         {value: 'lowPrice', name: 'Low Price'},
@@ -58,6 +63,10 @@ const Shop = () => {
         return `${value}$`
     }
 
+
+    function draggedToShopcart(productId:number) {
+        dispatch(addProductToShopcart(product.filter(i => i.id === productId)[0]))
+    }
     return (
         <div className='shop'>
             <HeaderComponent/>
@@ -110,10 +119,11 @@ const Shop = () => {
                         </div>
                         <div className="body__product-list">
                             {filteredProduct.length < 1 ? <h1>No product</h1> : filteredProduct.map(i => <ProductCard
-                                product={i}/>)}
+                                product={i} dragBoxActive={setDragDivActive}/>)}
                         </div>
                     </div>
                 </div>
+                <DragBox isActive={dragDivActive} getProductId={draggedToShopcart}/>
             </div>
             <InfoComponent/>
             <FooterComponent/>

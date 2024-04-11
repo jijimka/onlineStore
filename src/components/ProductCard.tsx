@@ -12,9 +12,10 @@ interface ProductCardProps {
     sale?: boolean,
     style?:CSSProperties,
     imgBackgroundColor?:string,
+    dragBoxActive?:() => void,
 }
 
-const ProductCard: FC<ProductCardProps> = ({product, sale,style,imgBackgroundColor}) => {
+const ProductCard: FC<ProductCardProps> = ({product, sale,style,imgBackgroundColor,dragBoxActive}) => {
     const navigate = useNavigate()
     const {addProduct} = shopCartSlice.actions
     const {addToWishlist} = wishlistSlice.actions
@@ -44,12 +45,27 @@ const ProductCard: FC<ProductCardProps> = ({product, sale,style,imgBackgroundCol
             navigate('/onlineStore/login')
         }
     }
+    function dragStartFunc(event: React.DragEvent<HTMLDivElement>) {
+        event.dataTransfer.setData("id",`${product.id}`)
+        if (dragBoxActive && loggedIn) {
+            dragBoxActive()
+        }
+    }
 
+    function dragEndFunc(e: React.DragEvent<HTMLDivElement>) {
+        if (dragBoxActive && loggedIn) {
+            dragBoxActive()
+        }
+    }
 
     return (
-        <div onMouseEnter={e => setIsBttnsActive(true)} onMouseLeave={e => setIsBttnsActive(false)}
+        <div onMouseEnter={e => setIsBttnsActive(true)}
+             onMouseLeave={e => setIsBttnsActive(false)}
              className={productCardClasses.join(' ')}
              style={style}
+             onDragStart={(e) => dragStartFunc(e)}
+             onDragEnd={(e) => dragEndFunc(e)}
+             draggable={true}
         >
             <div style={{backgroundColor:imgBackgroundColor}} className={imgClasses.join(' ')}>
                 <img src={AllImages(product.id)} alt={product.category} className="product-card__img"/>
