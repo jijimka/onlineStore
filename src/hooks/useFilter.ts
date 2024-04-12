@@ -30,7 +30,7 @@ export const usePriceFilter = (product: IProduct[], priceValue: number[], catego
 export const useSearchFilter = (product: IProduct[], searchQuery: string, priceValue:number[],categoryValue:string, ):IProduct[] => {
     const priceAndCategoryFiltered = usePriceFilter(product,priceValue,categoryValue)
     const searchFilter = useMemo(() => {
-        return searchQuery.length > 1
+        return searchQuery.length >= 1
             ?
             priceAndCategoryFiltered.filter(i => {
                 return i.title.toLowerCase().includes(searchQuery.toLowerCase())

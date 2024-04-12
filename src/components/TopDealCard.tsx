@@ -17,12 +17,12 @@ const TopDealCard:FC<TopDealCardProps> = ({product,subtitle}) => {
                     {subtitle}
                 </div>
                 <div className="card__title">
-                    {product?.title}
+                    <Link to={`/onlineStore/shop/${product.category}/${product.id}`}>{product?.title}</Link>
                 </div>
                 <Link rel='noreferrer noopener' to={`/onlineStore/shop/${product?.category}/${product?.id}`} style={{color:'#076df2'}} className="card__btn"><span className='floor'>Shop</span> now</Link>
             </div>
             <div className="card__img-div">
-                <img src={AllImages(product?.id)} alt="" className="card__img"/>
+                <Link to={`/onlineStore/shop/${product.category}/${product.id}`}><img src={AllImages(product?.id)} alt="" className="card__img"/></Link>
             </div>
         </div>
     );

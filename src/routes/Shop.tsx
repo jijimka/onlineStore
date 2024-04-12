@@ -24,7 +24,7 @@ const Shop = () => {
     const addProductToShopcart = shopCartSlice.actions.addProduct
     const {product, loading, error} = useTypedSelector(state => state.product)
     const categories = useTypedSelector(state => state.categories.categories)
-    const {state} = useLocation()
+    const menuOptions = useLocation().state
     const [sliderValue, setSliderValue] = useState<number[]>([0, getHighestPrice(product)])
     const [filterValue, filterChange] = useControlledInput('all')
     const [searchFilter, searchFilterChange] = useControlledInput()
@@ -45,12 +45,12 @@ const Shop = () => {
     useEffect(() => {
         if (product.length < 1) dispatch(fetchProduct())
         if (categories.length < 1) dispatch(fetchCategories())
-        if (state !== null) {
-            if (state.search?.length > 1) {
-                sortingChange(state.search)
+        if (menuOptions !== null) {
+            if (menuOptions.search?.length > 1) {
+                searchFilterChange(menuOptions.search)
             }
-            if (state.category?.length > 1) {
-                filterChange(state.category)
+            if (menuOptions.category?.length > 1) {
+                filterChange(menuOptions.category)
             }
         }
     }, [])
@@ -62,7 +62,6 @@ const Shop = () => {
     function sliderTextValue(value: number) {
         return `${value}$`
     }
-
 
     function draggedToShopcart(productId:number) {
         dispatch(addProductToShopcart(product.filter(i => i.id === productId)[0]))

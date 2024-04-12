@@ -21,7 +21,6 @@ const LoginPage = () => {
             password: passwordForm,
         }
         let loginResult = checkLoginForm(userList, user)
-        console.log(loginResult, userList, user)
         if (loginResult === null) {
             setOutputLoginSubmit(false)
         } else {

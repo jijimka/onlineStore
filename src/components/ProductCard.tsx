@@ -68,10 +68,10 @@ const ProductCard: FC<ProductCardProps> = ({product, sale,style,imgBackgroundCol
              draggable={true}
         >
             <div style={{backgroundColor:imgBackgroundColor}} className={imgClasses.join(' ')}>
-                <img src={AllImages(product.id)} alt={product.category} className="product-card__img"/>
+                <Link to={`/onlineStore/shop/${product.category}/${product.id}`}><img src={AllImages(product.id)} alt={product.category} className="product-card__img"/></Link>
             </div>
             <div className="product-card__text">
-                <div className="product-card__title">{product.title}</div>
+                <div className="product-card__title"><Link to={`/onlineStore/shop/${product.category}/${product.id}`}>{product.title}</Link></div>
                 <div className="product-card__rating"><Rating defaultValue={product.rating.rate} name='read-only' readOnly/></div>
                 <div className="product-card__price">${product.price}{sale && '$' + product.price * 2}</div>
             </div>

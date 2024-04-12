@@ -14,7 +14,7 @@ const PanelItem:FC<PanelItemProps> = ({item,text,}) => {
             <div className="panel-item__text">
                 <span className='subtitle'>{text}</span>
                 <h1 className='panel-item__title'>
-                    {item.title}
+                    <Link to={`/onlineStore/shop/${item.category}/${item.id}`}>{item.title}</Link>
                 </h1>
                 <div className='panel-item__price'><span className='price'>${item.price}</span> <span className='discount'>${item.price*2}</span></div>
                 <Link rel='noreferrer noopener' to={`/onlineStore/shop/${item.category}/${item.id}`} style={{color:'#076df2'}} className='panel-item__bttns'><span className='floor'>Shop</span> now</Link>
