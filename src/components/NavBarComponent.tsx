@@ -27,7 +27,15 @@ const NavBarComponent: FC<NavBarComponentProps> = ({categories}) => {
                     </div>
                     <ModalWindow isActive={isCategoriesActive} changeActive={changeCategoriesModal}>
                         <div className="categories__list">
-                            {categories.map(i => <Link to={`/onlineStore/shop`} state={{category:i}} className='list__paragraph'>{i}</Link>)}
+                            {categories.map(i =>
+                                <Link
+                                    to={`/onlineStore/shop`}
+                                    state={{category:i}}
+                                    className='list__paragraph'
+                                >
+                                    {i}
+                                </Link>
+                            )}
                         </div>
                     </ModalWindow>
                 </div>

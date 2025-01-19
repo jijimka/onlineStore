@@ -36,11 +36,13 @@ const Shop = () => {
         {value: 'lowPrice', name: 'Low Price'},
         {value: 'highPrice', name: 'High Price'},
         {value: 'title', name: 'Name'},
+        {value: 'rating', name: 'Rating'},
     ]
     const inputStyleProps: CSSProperties = {
         border: '2px solid #f0f0f4',
         borderRadius: '5px',
     }
+    console.log(filteredProduct)
 
     useEffect(() => {
         if (product.length < 1) dispatch(fetchProduct())

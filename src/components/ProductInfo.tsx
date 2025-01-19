@@ -15,13 +15,12 @@ const ProductInfo:FC<ProductInfoProps> = ({product}) => {
     const loggedIn = useTypedSelector(state => state.users.loggedInUser)
     const {addToWishlist} = wishlistSlice.actions
     const {addProduct} = shopCartSlice.actions
+
     function addToWishlistFunc() {
         if (loggedIn !== null) {
             dispatch(addToWishlist(product))
         }
     }
-
-
     function addToShopcartFunc() {
         if (loggedIn !== null) {
             dispatch(addProduct(product))

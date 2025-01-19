@@ -29,7 +29,7 @@ export const fetchUsers = () => async (dispatch:DispatchState) => {
     try {
         const response = await axios.get<IUser[]>('https://fakestoreapi.com/users')
         dispatch(setUsers(response.data))
-    } catch (e) {
-
+    } catch (e: unknown) {
+        alert(e)
     }
 }

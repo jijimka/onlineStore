@@ -347,7 +347,11 @@ nav {
   overflow: hidden;
   height: 25px;
 }
-
+.product-card__rating {
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+}
 .top-deal {
   padding: 50px;
   display: flex;
@@ -518,6 +522,11 @@ footer {
   transition: 0.2s ease all;
 }
 .btn:active {
+  background-color: white;
+  color: #076df2;
+  outline: black 1px solid;
+}
+.btn:hover {
   background-color: white;
   color: #076df2;
 }

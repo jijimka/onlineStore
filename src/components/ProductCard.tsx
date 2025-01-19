@@ -72,7 +72,7 @@ const ProductCard: FC<ProductCardProps> = ({product, sale,style,imgBackgroundCol
             </div>
             <div className="product-card__text">
                 <div className="product-card__title"><Link to={`/onlineStore/shop/${product.category}/${product.id}`}>{product.title}</Link></div>
-                <div className="product-card__rating"><Rating defaultValue={product.rating.rate} name='read-only' readOnly/></div>
+                <div className="product-card__rating"><Rating value={product.rating.rate}  defaultValue={product.rating.rate} precision={0.5} name='simple-uncontrolled' />{product.rating.rate} {product.rating.count}</div>
                 <div className="product-card__price">${product.price}{sale && '$' + product.price * 2}</div>
             </div>
             <div className={bttnsClasses.join(' ')}>

@@ -40,6 +40,7 @@ export const useSearchFilter = (product: IProduct[], searchQuery: string, priceV
     }, [priceAndCategoryFiltered, searchQuery])
     return searchFilter
 }
+
 export const useProductSort = (product: IProduct[], searchQuery: string, priceValue:number[],categoryValue:string, sortMethod: string,):IProduct[] => {
     const filteredProduct = useSearchFilter(product,searchQuery,priceValue,categoryValue)
     const productSort = useMemo(() => {
@@ -48,6 +49,7 @@ export const useProductSort = (product: IProduct[], searchQuery: string, priceVa
             case 'lowPrice': return [...filteredProduct].sort((a,b) => a.price - b.price)
             case 'highPrice': return [...filteredProduct].sort((a,b) => b.price - a.price)
             case 'title':return [...filteredProduct].sort((a,b) => a.title.localeCompare(b.title))
+            case 'rating': return [...filteredProduct].sort((a,b) => b.rating.rate - a.rating.rate )
             default:return filteredProduct
         }
     }, [filteredProduct, sortMethod])
